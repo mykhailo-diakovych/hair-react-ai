@@ -1,0 +1,118 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb-typescript",
+    "prettier",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "plugin:react/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint", "prettier", "import"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "none",
+        "endOfLine": "auto",
+        "printWidth": 80
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never",
+        "js": "never",
+        "jsx": "never",
+        "d": "never"
+      }
+    ],
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": false,
+        "classes": true,
+        "variables": true,
+        "allowNamedExports": false
+      }
+    ],
+    "no-plusplus": "off",
+    "no-nested-ternary": "warn",
+    "class-methods-use-this": "off",
+    "prefer-regex-literals": "warn",
+    "no-param-reassign": "warn",
+    "no-case-declarations": "warn",
+    "import/no-import-module-exports": "warn",
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "@typescript-eslint/naming-convention": [
+      "warn",
+      {
+        "selector": "variable",
+        "format": ["camelCase", "PascalCase", "UPPER_CASE"],
+        "leadingUnderscore": "allow",
+        "trailingUnderscore": "allow"
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["sibling", "parent"],
+          "index",
+          "object",
+          "type"
+        ],
+        "newlines-between": "always-and-inside-groups",
+        "alphabetize": {
+          "order": "desc",
+          "caseInsensitive": true
+        },
+        "pathGroups": [
+          {
+            "pattern": "@*/**",
+            "group": "sibling"
+          }
+        ]
+      }
+    ],
+    "@typescript-eslint/no-shadow": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "import/no-extraneous-dependencies": "off",
+    "@typescript-eslint/ban-types": "off",
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": false
+      }
+    ],
+    "react/display-name": "off"
+  },
+  "ignorePatterns": ["node_modules", "dist", "src/vite-env.d.ts"]
+}
